@@ -1,24 +1,28 @@
-// components/Events.js
 import React from 'react';
-import { Camera, Users, Briefcase } from 'lucide-react';
 
-const EventCard = ({ Icon, title, date }) => (
-    <div className="bg-white rounded-lg shadow-md p-6 text-center">
-        <Icon className="mx-auto text-blue-600 mb-4" size={48} />
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-gray-600">{date}</p>
+const Events = () => {
+  const events = [
+    { id: 1, title: 'Annual Hackathon', date: 'October 15-17, 2023' },
+    { id: 2, title: 'AI Workshop Series', date: 'Every Tuesday, Sept - Nov 2023' },
+    { id: 3, title: 'Tech Talk: Future of Quantum Computing', date: 'November 5, 2023' },
+  ];
+
+  return (
+    <div className="max-w-4xl mx-auto py-20 animate-fadeIn">
+      <h2 className="text-3xl font-bold mb-8 text-center">Upcoming Events</h2>
+      <div className="space-y-6">
+        {events.map((event) => (
+          <div 
+            key={event.id} 
+            className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-102"
+          >
+            <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
+            <p className="text-gray-600">{event.date}</p>
+          </div>
+        ))}
+      </div>
     </div>
-);
-
-const Events = () => (
-    <section id="events" className="py-16">
-        <h2 className="text-3xl font-bold mb-6 text-gray-800">Upcoming Events</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <EventCard Icon={Users} title="Annual Department Mixer" date="September 15" />
-            <EventCard Icon={Camera} title="Guest Lecture Series" date="October 5" />
-            <EventCard Icon={Briefcase} title="Career Fair" date="November 20" />
-        </div>
-    </section>
-);
+  );
+};
 
 export default Events;
