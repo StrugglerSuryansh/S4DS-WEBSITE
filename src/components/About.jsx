@@ -4,7 +4,7 @@ const About = () => {
   const [activeTab, setActiveTab] = useState('mission');
 
   return (
-    <div className="max-w-4xl mx-auto py-20 animate-fadeIn">
+    <div id='about' className="max-w-4xl mx-auto py-20 animate-fadeIn">
       <h2 className="text-3xl font-bold mb-8 text-center">About S4DS</h2>
       <div className="mb-8 flex justify-center space-x-4">
         {['Mission', 'Vision', 'Values'].map((tab) => (

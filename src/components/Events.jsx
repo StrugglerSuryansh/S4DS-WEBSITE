@@ -8,7 +8,7 @@ const Events = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto py-20 animate-fadeIn">
+    <div id='events' className="max-w-4xl mx-auto py-20 animate-fadeIn">
       <h2 className="text-3xl font-bold mb-8 text-center">Upcoming Events</h2>
       <div className="space-y-6">
         {events.map((event) => (
